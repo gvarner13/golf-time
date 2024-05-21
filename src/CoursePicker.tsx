@@ -9,21 +9,45 @@ import {
 export function CoursePicker() {
   return (
     <div>
+      <div className="mb-4">
+        <h1 className="text-5xl mt-4 max-w-[36rem] font-extrabold tracking-tight text-slate-900 sm:text-7xl xl:max-w-[43.5rem]">
+          Select Your Course
+        </h1>
+        <p>
+          Choose from three beutiful 9 hole courses that link together for a
+          great golf experiance.
+        </p>
+      </div>
       <div className="flex gap-x-8">
-        <CourseCard />
-        <CourseCard />
-        <CourseCard />
+        <CourseCard
+          courseTitle="Red Course"
+          courseDescription="Simple 9 holes"
+        />
+        <CourseCard
+          courseTitle="Blue Course"
+          courseDescription="Simple 9 holes"
+        />
+        <CourseCard
+          courseTitle="White Course"
+          courseDescription="Simple 9 holes"
+        />
       </div>
     </div>
   );
 }
 
-function CourseCard() {
+function CourseCard({
+  courseTitle,
+  courseDescription,
+}: {
+  courseTitle: string;
+  courseDescription: string;
+}) {
   return (
     <Card className="overflow-hidden">
       <CardHeader>
-        <CardTitle>Red Course</CardTitle>
-        <CardDescription>Easy 9 holes</CardDescription>
+        <CardTitle>{courseTitle}</CardTitle>
+        <CardDescription>{courseDescription}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-2">
