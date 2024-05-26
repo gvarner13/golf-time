@@ -166,14 +166,28 @@ function HoleCarousel({ data }: { data: [] }) {
   );
 }
 
+const containerVariants = {
+  open: {
+    width: "460px",
+    height: "225px",
+  },
+  closed: {
+    width: "200px",
+    height: "132px",
+  },
+};
+
 function TimeWidget() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <motion.div
       className="border border-light-border group relative flex w-[500px] cursor-pointer flex-col overflow-hidden rounded-2xl bg-white font-sans shadow-tooltip transition-shadow ease-out hover:shadow-menu dark:bg-[#1A1A1A] dark:shadow-inner-shadow-dark-md dark:hover:shadow-inner-shadow-dark-float"
       //   style={{ width: "200px", height: "116px" }}
       //   style={{ width: "460px", height: "211px" }}
-      initial={{ width: "200px", height: "116px" }}
-      animate={{ width: "460px", height: "211px" }}
+      initial={false}
+      animate={isOpen ? `open` : `closed`}
+      variants={containerVariants}
+      onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex flex-col items-start w-full gap-4 px-4 py-4">
         <div className="flex items-start justify-between w-full">
@@ -182,7 +196,18 @@ function TimeWidget() {
               In 15 mins
             </div>
           </div>
-          <Button>Book It</Button>
+          <motion.div
+            variants={{
+              open: {
+                opacity: 1,
+              },
+              closed: {
+                opacity: 0,
+              },
+            }}
+          >
+            <Button>Book It</Button>
+          </motion.div>
         </div>
         <div className="flex flex-col gap-1">
           <div className="select-none text-sm font-medium text-[#313135] dark:text-white">
@@ -195,9 +220,17 @@ function TimeWidget() {
       </div>
       <div className="h-px w-full flex-shrink-0 bg-[#E6E6E6] dark:bg-white/5"></div>
       <div className="flex justify-between w-full h-auto gap-2 px-4 py-4">
-        <div
+        <motion.div
           className="flex flex-col justify-between gap-2"
           //   style={{ opacity: 1, filter: "blur(4px)" }}
+          variants={{
+            open: {
+              opacity: 1,
+            },
+            closed: {
+              opacity: 0,
+            },
+          }}
         >
           <div className="flex items-start w-full gap-2">
             <div className="w-auto text-sm font-medium text-[#313135] dark:text-white">
@@ -271,10 +304,20 @@ function TimeWidget() {
               />
             </div>
           </div>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           className="flex h-[60px] flex-col justify-between"
           //   style={{ opacity: 1, filter: "blur(4px)" }}
+          variants={{
+            open: {
+              opacity: 1,
+              filter: "blur(0px)",
+            },
+            closed: {
+              opacity: 0,
+              filter: "blur(4px)",
+            },
+          }}
         >
           <div className="flex items-center justify-center text-sm text-[#64646B]"></div>
           <div className="flex items-center justify-end gap-[6px]">
@@ -285,7 +328,7 @@ function TimeWidget() {
             <div className="h-[26px] w-[8px] rounded-full bg-[#F2F2F2] dark:bg-white/5"></div>
             <div className="h-[26px] w-[8px] rounded-full bg-[#E6E6E6] dark:bg-white/15"></div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );
