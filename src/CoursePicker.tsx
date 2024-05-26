@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,6 +18,21 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+const holeData = [
+  {
+    holeNumber: 1,
+    holePar: 3,
+    holeYards: 250,
+    holePhoto: "/golf_course_images/holes/h_11ANGC10-MMa2148Hc-copy.avif",
+  },
+  {
+    holeNumber: 2,
+    holePar: 4,
+    holeYards: 350,
+    holePhoto: "/golf_course_images/holes/h_12ANGC12-m1734Hc-wb.avif",
+  },
+];
+
 export function CoursePicker() {
   return (
     <>
@@ -24,7 +41,7 @@ export function CoursePicker() {
           <h1 className="text-center text-5xl font-bold tracking-tight text-slate-900 mb-4">
             Select Your Course
           </h1>
-          <p className="mb-4">
+          <p className="mb-4 text-center">
             Choose from three beautiful 9 hole courses that link together for a
             great golf experiance.
           </p>
@@ -53,6 +70,7 @@ export function CoursePicker() {
           holePar="3"
           holeYards="210"
           holePhoto="/golf_course_images/master_1_hole.avif"
+          data={holeData}
         />
       </div>
       <div className="mt-8 min-h-screen flex justify-center">
@@ -74,8 +92,10 @@ function CourseCard({
   return (
     <Card className="overflow-hidden">
       <CardHeader>
-        <CardTitle>{courseTitle}</CardTitle>
-        <CardDescription>{courseDescription}</CardDescription>
+        <CardTitle className="text-center">{courseTitle}</CardTitle>
+        <CardDescription className="text-center">
+          {courseDescription}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-2">
@@ -95,17 +115,7 @@ function CourseCard({
   );
 }
 
-function HoleCarousel({
-  holeNumber,
-  holePar,
-  holeYards,
-  holePhoto,
-}: {
-  holeNumber: number;
-  holePar: string;
-  holeYards: string;
-  holePhoto: string;
-}) {
+function HoleCarousel({ data }: { data: [] }) {
   return (
     <Carousel
       opts={{
@@ -115,7 +125,7 @@ function HoleCarousel({
       className="w-full"
     >
       <CarouselContent>
-        {Array.from({ length: 18 }).map((_, index) => (
+        {data.map((holeData, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
             <div className="p-1">
               <Card>
@@ -123,23 +133,23 @@ function HoleCarousel({
                   <div className="relative">
                     <img
                       className="aspect-square w-full rounded-md object-cover"
-                      src={holePhoto}
+                      src={holeData.holePhoto}
                       alt="Random image"
                     />
                     <div className="absolute inset-0 flex flex-col gap-1 items-start p-2 text-left justify-around">
                       <h2 className="text-white text-5xl font-bold">
-                        {holeNumber + index}
+                        {holeData.holeNumber}
                       </h2>
                       <div>
                         <p className="text-white text-3xl font-bold">Par</p>
                         <p className="text-white text-3xl font-bold">
-                          {holePar}
+                          {holeData.holePar}
                         </p>
                       </div>
                       <div>
                         <p className="text-white text-3xl font-bold">Yards</p>
                         <p className="text-white text-3xl font-bold">
-                          {holeYards}
+                          {holeData.holeYards}
                         </p>
                       </div>
                     </div>
@@ -158,10 +168,12 @@ function HoleCarousel({
 
 function TimeWidget() {
   return (
-    <div
+    <motion.div
       className="border border-light-border group relative flex w-[500px] cursor-pointer flex-col overflow-hidden rounded-2xl bg-white font-sans shadow-tooltip transition-shadow ease-out hover:shadow-menu dark:bg-[#1A1A1A] dark:shadow-inner-shadow-dark-md dark:hover:shadow-inner-shadow-dark-float"
       //   style={{ width: "200px", height: "116px" }}
-      style={{ width: "460px", height: "211px" }}
+      //   style={{ width: "460px", height: "211px" }}
+      initial={{ width: "200px", height: "116px" }}
+      animate={{ width: "460px", height: "211px" }}
     >
       <div className="flex flex-col items-start w-full gap-4 px-4 py-4">
         <div className="flex items-start justify-between w-full">
@@ -275,6 +287,6 @@ function TimeWidget() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
