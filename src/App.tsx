@@ -7,6 +7,7 @@ import { EventList } from "@/components/event-list";
 import { Login } from "./components/login";
 import { CoursePicker } from "./CoursePicker";
 import { Navbar } from "@/components/navbar";
+import { MainPage } from "@/components/hero";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <MainPage />
       <div className="w-3/4 m-auto">
         {/* <Login /> */}
         <CoursePicker />

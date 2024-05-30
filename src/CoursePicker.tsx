@@ -303,6 +303,7 @@ function TimeWidget() {
                 style={{ marginRight: "-8px" }}
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
                 <svg
                   width="28"
