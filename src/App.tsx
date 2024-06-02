@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <MainPage />
       <div className="w-3/4 m-auto">
         {/* <Login /> */}
