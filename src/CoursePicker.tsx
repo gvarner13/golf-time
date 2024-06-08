@@ -41,7 +41,34 @@ const holeData: HoleData[] = [
     holeYards: 350,
     holePhoto: "/golf_course_images/holes/h_12ANGC12-m1734Hc-wb.avif",
   },
+  {
+    holeNumber: 3,
+    holePar: 4,
+    holeYards: 352,
+    holePhoto: "/golf_course_images/holes/h_12ANGC12-m1734Hc-wb.avif",
+  },
+  {
+    holeNumber: 4,
+    holePar: 3,
+    holeYards: 190,
+    holePhoto: "/golf_course_images/holes/h_16ANGC09-RBa0381Hc.avif",
+  },
+  {
+    holeNumber: 5,
+    holePar: 3,
+    holeYards: 190,
+    holePhoto: "/golf_course_images/holes/h_16ANGC09-RBa0381Hc.avif",
+  },
+  {
+    holeNumber: 6,
+    holePar: 3,
+    holeYards: 190,
+    holePhoto: "/golf_course_images/holes/h_16ANGC09-RBa0381Hc.avif",
+  },
 ];
+
+const teeTime = new Date();
+teeTime.setHours(teeTime.getHours() + 2);
 
 export function CoursePicker() {
   return (
@@ -233,7 +260,7 @@ function TimeWidget() {
         <div className="flex items-start justify-between w-full">
           <div className="flex flex-col items-start gap-4">
             <div className="inline-block select-none rounded-full bg-[#FFF2F6] px-3 py-1 text-[12px] font-medium text-[#FF0342] transition-colors duration-200 group-hover:bg-[#FFEDF2] dark:bg-[#0DFFC5]/5 dark:text-[#0DFFC5] group-hover:dark:bg-[#182620]">
-              In 15 mins
+              In 30 mins
             </div>
           </div>
           <motion.div
@@ -254,7 +281,10 @@ function TimeWidget() {
             Tee Time
           </div>
           <div className="select-none text-sm text-[#64646B] dark:text-white/60">
-            1:30PM
+            {teeTime.toLocaleTimeString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
           </div>
         </div>
       </div>
@@ -277,21 +307,6 @@ function TimeWidget() {
             </div>
             <div className="flex items-center justify-center gap-2 rounded-full text-sm text-[#64646B]">
               <div className="flex items-center justify-center gap-1 text-[#64646B] dark:text-white/60">
-                <span className="text-[#CCCCCC] dark:text-white/30">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M2.057 4.98a6.666 6.666 0 017.564-3.45 6.667 6.667 0 11-7.563 3.45zm3.388 1.98a.333.333 0 01-.498.116l-2.1-1.574a.321.321 0 01-.093-.412 5.998 5.998 0 016.38-2.984.32.32 0 01.244.395l-.64 2.566a.333.333 0 01-.242.243l-2.394.602a.333.333 0 00-.217.173l-.44.874zm4.706 4.279a.333.333 0 01-.299.184h-1.67a.333.333 0 01-.277-.148L6.787 9.597a.333.333 0 01.042-.421l.459-.457a.333.333 0 01.256-.097l1.09.07a.333.333 0 01.165.056l1.7 1.142c.14.094.188.276.113.426l-.461.923z"
-                    ></path>
-                  </svg>
-                </span>
                 3
               </div>
             </div>
@@ -305,7 +320,7 @@ function TimeWidget() {
                   animate={{ opacity: 1 }}
                   initial={{ opacity: 0 }}
                   exit={{ opacity: 0 }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: 0.05 }}
                   key={index}
                 >
                   <svg
