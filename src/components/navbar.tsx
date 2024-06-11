@@ -26,35 +26,40 @@ export function MaterialSymbolsFlagCircleOutline(
   );
 }
 
-export function Navbar() {
+export function Navbar({ isLoggedIn = false }: { isLoggedIn: boolean }) {
   return (
-    <header className="sticky z-50 top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-        <a
-          href="#"
-          className="flex items-center gap-2 text-lg font-semibold md:text-base"
-        >
-          <MaterialSymbolsFlagCircleOutline className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
-        </a>
-        <a
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Courses
-        </a>
-        <a
-          href="#"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Customers
-        </a>
-        <a
-          href="#"
-          className="text-foreground transition-colors hover:text-foreground"
-        >
-          Settings
-        </a>
+    <header className="sticky z-50 top-0 flex h-16 items-center justify-between gap-4 border-b bg-background px-4 md:px-6">
+      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 w-full justify-between">
+        <div className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+          <a
+            href="#"
+            className="flex items-center gap-2 text-lg font-semibold md:text-base"
+          >
+            <MaterialSymbolsFlagCircleOutline className="h-6 w-6" />
+            <span className="sr-only">French National</span>
+          </a>
+          <p>French National</p>
+        </div>
+        <div className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+          <a
+            href="#"
+            className="text-muted-foreground transition-colors hover:text-foreground text-nowrap"
+          >
+            The Course
+          </a>
+          <a
+            href="#"
+            className="text-muted-foreground transition-colors hover:text-foreground text-nowrap"
+          >
+            Membership
+          </a>
+          <a
+            href="#"
+            className="text-foreground transition-colors hover:text-foreground text-nowrap"
+          >
+            Pro Shop
+          </a>
+        </div>
       </nav>
       <Sheet>
         <SheetTrigger asChild>
@@ -90,7 +95,7 @@ export function Navbar() {
           </nav>
         </SheetContent>
       </Sheet>
-      <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
+      {/* <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
         <form className="ml-auto flex-1 sm:flex-initial">
           <div className="relative">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -117,6 +122,9 @@ export function Navbar() {
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+      </div> */}
+      <div>
+        <Button>Book Now</Button>
       </div>
     </header>
   );

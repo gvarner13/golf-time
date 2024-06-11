@@ -4,7 +4,7 @@ import { Navbar } from "@/components/navbar";
 export function MainPage() {
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={true} />
       <div
         className="bg-cover min-h-screen bg-fixed"
         style={{ backgroundImage: "url('/DJI_0138_SV_2_I2_1-Photo-page.jpg')" }}
@@ -27,7 +27,7 @@ export function MainPage() {
         style={{ backgroundImage: "url('/Canyata_16x9-Photo-page.jpg')" }}
       >
         <div className="backdrop-blur-sm bg-white/70">
-          <div className="mx-auto max-w-3xl py-12 text-center">
+          <div className="mx-auto max-w-3xl py-10 text-center">
             <div>
               <Button>Book Tee Time</Button>
             </div>
