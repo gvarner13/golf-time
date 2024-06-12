@@ -28,8 +28,8 @@ export function MaterialSymbolsFlagCircleOutline(
 
 export function Navbar({ isLoggedIn = false }: { isLoggedIn: boolean }) {
   return (
-    <header className="sticky z-50 top-0 flex h-16 items-center justify-between gap-4 border-b bg-background px-4 md:px-6">
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 w-full justify-between">
+    <header className="sticky z-50 top-0 flex h-16 items-center justify-between gap-4 px-4 md:px-6">
+      <nav className="hidden flex-col gap-6 text-white text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 w-full justify-between">
         <div className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <a
             href="#"
@@ -43,19 +43,19 @@ export function Navbar({ isLoggedIn = false }: { isLoggedIn: boolean }) {
         <div className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <a
             href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground text-nowrap"
+            className="text-white transition-colors hover:text-foreground text-nowrap"
           >
             The Course
           </a>
           <a
             href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground text-nowrap"
+            className="text-white transition-colors hover:text-foreground text-nowrap"
           >
             Membership
           </a>
           <a
             href="#"
-            className="text-foreground transition-colors hover:text-foreground text-nowrap"
+            className="text-white transition-colors hover:text-foreground text-nowrap"
           >
             Pro Shop
           </a>
@@ -124,7 +124,7 @@ export function Navbar({ isLoggedIn = false }: { isLoggedIn: boolean }) {
         </DropdownMenu>
       </div> */}
       <div>
-        <Button>Book Now</Button>
+        <Button variant="outline">Book Now</Button>
       </div>
     </header>
   );

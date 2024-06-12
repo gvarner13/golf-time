@@ -4,27 +4,23 @@ import { Navbar } from "@/components/navbar";
 export function MainPage() {
   return (
     <div>
-      <Navbar isLoggedIn={true} />
       <div
         className="bg-cover min-h-screen bg-fixed"
-        style={{ backgroundImage: "url('/DJI_0138_SV_2_I2_1-Photo-page.jpg')" }}
+        style={{ backgroundImage: "url('/Canyata_16x9-Photo-page.jpg')" }}
       >
-        <div className="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
-          <div className="text-center backdrop-blur-sm bg-black/30 p-8 rounded">
-            <h1 className="text-6xl font-bold text-white">
-              French National <br /> Golf Course
+        <Navbar isLoggedIn={true} />
+        <div className="ml-8 mr-auto max-w-3xl py-28 sm:py-48 lg:py-28">
+          <div className="bg-black/30 p-6 rounded">
+            <h1 className="text-5xl text-white font-light leading-tight">
+              Experience the beauty <br /> of lush, rolling greens and unique
+              landscapes.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-white">
-              Experience the beauty of lush, rolling greens and unique
-              landscapes. Discover the ultimate golfing experience at French
-              National, where every round is a masterpiece.
-            </p>
           </div>
         </div>
       </div>
       <section
         className="bg-cover min-h-screen bg-fixed"
-        style={{ backgroundImage: "url('/Canyata_16x9-Photo-page.jpg')" }}
+        style={{ backgroundImage: "url('/DJI_0138_SV_2_I2_1-Photo-page.jpg')" }}
       >
         <div className="backdrop-blur-sm bg-white/70">
           <div className="mx-auto max-w-3xl py-10 text-center">
