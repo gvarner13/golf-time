@@ -30,32 +30,34 @@ export function Navbar({ isLoggedIn = false }: { isLoggedIn: boolean }) {
   return (
     <header className="sticky z-50 top-0 flex h-16 items-center justify-between gap-4 px-4 md:px-6">
       <nav className="hidden flex-col gap-6 text-white text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 w-full justify-between">
-        <div className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+        <div className="flex-col gap-2 text-lg font-medium md:flex md:flex-row md:items-center md:text-sm">
           <a
             href="#"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
-            <MaterialSymbolsFlagCircleOutline className="h-6 w-6" />
+            <MaterialSymbolsFlagCircleOutline className="h-8 w-8" />
             <span className="sr-only">French National</span>
           </a>
-          <p>French National</p>
+          <p>
+            French <br /> National
+          </p>
         </div>
         <div className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <a
             href="#"
-            className="text-white transition-colors hover:text-foreground text-nowrap"
+            className="text-white hover:underline underline-offset-4 decoration-2 text-nowrap"
           >
             The Course
           </a>
           <a
             href="#"
-            className="text-white transition-colors hover:text-foreground text-nowrap"
+            className="text-white hover:underline underline-offset-4 decoration-2 text-nowrap"
           >
             Membership
           </a>
           <a
             href="#"
-            className="text-white transition-colors hover:text-foreground text-nowrap"
+            className="text-white hover:underline underline-offset-4 decoration-2 text-nowrap"
           >
             Pro Shop
           </a>

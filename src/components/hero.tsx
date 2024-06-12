@@ -9,10 +9,10 @@ export function MainPage() {
         style={{ backgroundImage: "url('/Canyata_16x9-Photo-page.jpg')" }}
       >
         <Navbar isLoggedIn={true} />
-        <div className="ml-8 mr-auto max-w-3xl py-28 sm:py-48 lg:py-28">
+        <div className="ml-4 md:ml-6 mr-auto py-28 sm:py-48 lg:py-28 max-w-xl">
           <div className="bg-black/30 p-6 rounded">
-            <h1 className="text-5xl text-white font-light leading-tight">
-              Experience the beauty <br /> of lush, rolling greens and unique
+            <h1 className="text-4xl text-white font-light leading-tight line-clamp-3">
+              Experience the beauty of lush, rolling greens and unique
               landscapes.
             </h1>
           </div>
@@ -23,17 +23,7 @@ export function MainPage() {
         style={{ backgroundImage: "url('/DJI_0138_SV_2_I2_1-Photo-page.jpg')" }}
       >
         <div className="backdrop-blur-sm bg-white/70">
-          <div className="mx-auto max-w-3xl py-10 text-center">
-            <div>
-              <Button>Book Tee Time</Button>
-            </div>
-            <div>
-              <p className="text-lg leading-8">
-                After your game, indulge in our exquisite cuisine, renowned for
-                its gourmet flavors and exceptional service.
-              </p>
-            </div>
-          </div>
+          Going to place the HoleCarousel component here and other course info
         </div>
       </section>
       <footer>
