@@ -15,11 +15,11 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
-      <MainPage />
-      {/* <div className="w-3/4 m-auto">
+      {/* <MainPage /> */}
+      <div className="w-3/4 m-auto">
         <Login />
-        <CoursePicker />
-      </div> */}
+        {/* <CoursePicker /> */}
+      </div>
     </>
   );
 }
