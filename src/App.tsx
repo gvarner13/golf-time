@@ -17,8 +17,8 @@ function App() {
       {/* <Navbar /> */}
       {/* <MainPage /> */}
       <div className="w-3/4 m-auto">
-        <Login />
-        {/* <CoursePicker /> */}
+        {/* <Login /> */}
+        <CoursePicker />
       </div>
     </>
   );

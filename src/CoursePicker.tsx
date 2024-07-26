@@ -21,6 +21,8 @@ import {
 import { SignUpForm } from "@/components/signup";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
+import { Mail } from "lucide-react";
+
 interface HoleData {
   holeNumber: number;
   holePar: number;
@@ -111,6 +113,9 @@ export function CoursePicker() {
       </div>
       <div className="my-8 flex justify-center">
         <SignUpForm />
+      </div>
+      <div className="flex justify-center w-full">
+        <ButtonDemo />
       </div>
     </>
   );
@@ -367,5 +372,18 @@ function TimeWidget() {
         </motion.div>
       </div>
     </motion.div>
+  );
+}
+
+function ButtonDemo() {
+  return (
+    <div className="flex items-end justify-between w-full max-w-3xl">
+      <Button size="sm">Button text</Button>
+      <Button size="default">Button text</Button>
+      <Button size="lg">Button text</Button>
+      <Button>
+        <Mail className="mr-2 h-4 w-4" /> Login with Email
+      </Button>
+    </div>
   );
 }
